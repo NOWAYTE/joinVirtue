@@ -6,6 +6,8 @@ type GlassSheetProps = {
   trigger: React.ReactNode
   className?: string
   triggerClass?: string
+  open: boolean
+  onOpenChange: (open: boolean) => void
 }
 
 const GlassSheet = ({
@@ -13,9 +15,11 @@ const GlassSheet = ({
   trigger,
   className,
   triggerClass,
+  open,
+  onOpenChange,
 }: GlassSheetProps) => {
   return (
-    <Sheet>
+    <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetTrigger className={cn(triggerClass)} asChild>
         {trigger}
       </SheetTrigger>

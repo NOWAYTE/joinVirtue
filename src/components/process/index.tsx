@@ -5,29 +5,39 @@ import TracingBeam from "../ui/tracing-beam";
 
 const steps = [
   {
+    year: "2023",
     title: "Start Small",
     description:
       "Begin with a side project or small business idea. No need for massive upfront investment.",
+    image: "/step1.png"
   },
   {
+    year: "2024",
     title: "Learn by Doing",
     description:
       "Get hands-on experience with real projects. Learn from mistakes and successes.",
+    image: "/step2.png"
   },
   {
+    year: "2025",
     title: "Build Products",
     description:
       "Create digital products, courses, or services that solve real problems.",
+    image: "/step3.png"
   },
   {
+    year: "2026",
     title: "Build in Public",
     description:
       "Share your progress, get feedback, and stay accountable inside the private builder community.",
+    image: "/step4.png"
   },
   {
+    year: "2027",
     title: "Earn & Scale",
     description:
       "Once things click, scale up what works. Get access to hidden upgrades, advanced strategies, and exclusive drops.",
+    image: "/step5.png"
   },
 ];
 
@@ -48,40 +58,7 @@ export default function ProcessSection() {
       <TracingBeam 
         className="relative max-w-5xl mx-auto w-full"
         items={steps}
-      >
-        <div className="flex flex-col gap-16">
-          {steps.map((step, idx) => {
-            const isLeft = idx % 2 === 0;
-            return (
-              <div
-                key={idx}
-                className={`flex w-full items-start ${
-                  isLeft ? "justify-start" : "justify-end"
-                }`}
-              >
-                <div
-                  className={`
-                    max-w-md w-full p-6 rounded-xl border border-[#1a1a1a] hover:border-[#2b80ff]
-                    transition duration-300 relative bg-black/60
-                    ${isLeft ? "text-right mr-8" : "text-left ml-8"}
-                  `}
-                >
-                  <h4 className="text-lg font-semibold mb-2">
-                    {`${idx + 1}. ${step.title}`}
-                  </h4>
-                  <p className="text-gray-400 text-sm">{step.description}</p>
-                  <span
-                    className={`
-                      absolute top-6 w-3 h-3 rounded-full bg-[#2b80ff]
-                      ${isLeft ? "right-[-0.75rem]" : "left-[-0.75rem]"}
-                    `}
-                  />
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </TracingBeam>
+      />
       <div className="text-center mt-40 space-y-4">
         <h1 className="text-3xl md:text-4xl font-bold mb-12"> Are you read <br className="md:block hidden" /> to transform your life?</h1>
       

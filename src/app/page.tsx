@@ -11,9 +11,9 @@ import { LampComponent } from "@/components/ui/lamp";
 import Curriculum from "@/components/curriculum";
 import PricingSection from "@/components/pricing";
 import Footer from "@/components/footer";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
-const fadeInVariant = (delay = 0) => ({
+const fadeInVariant = (delay = 0): Variants => ({
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
@@ -64,15 +64,6 @@ export default function Page() {
         </motion.div>
 
         <motion.div
-          id="curriculum"
-          initial="hidden"
-          animate="visible"
-          variants={fadeInVariant(0.4)}
-        >
-          <Curriculum />
-        </motion.div>
-
-        <motion.div
           id="process"
           initial="hidden"
           animate="visible"
@@ -97,6 +88,15 @@ export default function Page() {
           variants={fadeInVariant(0.7)}
         >
           <Founder />
+        </motion.div>
+
+         <motion.div
+          id="curriculum"
+          initial="hidden"
+          animate="visible"
+          variants={fadeInVariant(0.4)}
+        >
+          <Curriculum />
         </motion.div>
 
         <motion.div
