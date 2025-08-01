@@ -10,10 +10,10 @@ interface MenuProps {
 }
 
 const sections = [
-  { id: "home", name: "Home" },
-  { id: "features", name: "Features" },
-  { id: "faq", name: "FAQ" },
-  { id: "pricing", name: "Pricing" },
+  // { id: "home", name: "Home" },
+  // { id: "features", name: "Features" },
+  // { id: "faq", name: "FAQ" },
+  // { id: "pricing", name: "Pricing" },
 ];
 
 const Menu = ({ orientation, section, onSetsection }: MenuProps) => {

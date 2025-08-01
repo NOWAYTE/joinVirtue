@@ -17,7 +17,7 @@ interface GlassSheetProps {
 }
 
 const Navbar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    // const [isMenuOpen, setIsMenuOpen] = useState(false);
     const {section, onSetsection} = useNavigation();
 
     return (
@@ -34,6 +34,7 @@ const Navbar = () => {
                 Join Now
                 </Button>
                 </Link>
+                {/* Mobile menu button - commented out
                 <GlassSheet
                 triggerClass="lg:hidden"
                 open={isMenuOpen}
@@ -52,6 +53,7 @@ const Navbar = () => {
                     <Menu orientation="mobile" section={section} onSetsection={onSetsection} />
                 </div>
                 </GlassSheet>
+                */}
             </div>
         </div>
     );
