@@ -4,13 +4,16 @@ import NavTestimonials from "@/components/testimonials/nav-testimonials";
 
 const Home = () => {
     return (
-        <div className="w-full">
-            <div className="pl-4 md:pl-6 lg:pl-8 xl:pl-10">
-                <div className="mb-12">
-                    <NavTestimonials />
+        <div className="w-full relative">
+            <div className="relative z-0">
+                <div className="pl-4 md:pl-6 lg:pl-8 xl:pl-10">
+                    <div className="mb-12">
+                        <NavTestimonials />
+                    </div>
+                    <CallToAction />
+                    <DashBoardSnippet />
+                    
                 </div>
-                <CallToAction />
-                <DashBoardSnippet />
             </div>
         </div>
     );

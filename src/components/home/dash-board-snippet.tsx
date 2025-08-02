@@ -55,6 +55,11 @@ const DashBoardSnippet = () => {
           </div>
         )}
       </div>
+      {/* Right edge fade */}
+            <div className="absolute w-40 h-full right-0 top-0 z-10 [mask-image:linear-gradient(to_left,white,transparent)]" />
+
+            {/* Bottom edge fade */}
+            <div className="absolute w-full h-40 bottom-0 left-0 z-10 [mask-image:linear-gradient(to_top,white,transparent)]" />
     </div>
   );
 };
