@@ -35,7 +35,7 @@ const CallToAction = () => {
                 <div className="max-w-4xl mx-auto">
                   <Button
           size="lg"
-          className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-semibold px-8 py-6 text-lg rounded-lg shadow-lg hover:shadow-xl transition-all duration-200"
+          className="bg-orange-500 text-gray-100 font-semibold px-8 py-6 text-lg rounded-lg shadow-lg hover:shadow-xl transition-all duration-200"
         >
           <ArrowUpRight className="w-4 h-4 mr-2" />
           Get Instant Access - $59

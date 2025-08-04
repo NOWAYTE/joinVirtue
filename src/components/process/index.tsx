@@ -23,21 +23,21 @@ const steps = [
     title: "Build Products",
     description:
       "Create digital products, courses, or services that solve real problems.",
-    image: "/step3.png"
+    image: "/step1.png"
   },
   {
     year: "2026",
     title: "Build in Public",
     description:
       "Share your progress, get feedback, and stay accountable inside the private builder community.",
-    image: "/step4.png"
+    image: "/step2.png"
   },
   {
     year: "2027",
     title: "Earn & Scale",
     description:
       "Once things click, scale up what works. Get access to hidden upgrades, advanced strategies, and exclusive drops.",
-    image: "/step5.png"
+    image: "/step1.png"
   },
 ];
 

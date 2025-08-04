@@ -34,6 +34,13 @@ const testimonials = [
 export default function VideoTestimonials() {
   return (
     <section className="bg-[#06070A] py-24 px-6 md:px-10 text-white relative overflow-hidden"> 
+      <div className="text-center mb-16 max-w-4xl mx-auto">
+        <p className="text-gray-400 text-lg mb-4">Testimonials</p>
+        <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+          Our Graduates Don't Just<br />
+          Learn, <span className="text-orange-500">They Achieve.</span>
+        </h1>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {testimonials.map((t, i) => (

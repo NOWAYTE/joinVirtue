@@ -13,6 +13,8 @@ import PricingSection from "@/components/pricing";
 import Footer from "@/components/footer";
 import { motion, Variants } from "framer-motion";
 import BuilderStruggles from "@/components/features/builder";
+import CurriculumSection from '@/components/curriculum/curr';
+import VideoTestimonials from '@/components/testimonials/video';
 
 const fadeInVariant = (delay = 0): Variants => ({
   hidden: { opacity: 0, y: 20 },
@@ -62,7 +64,7 @@ export default function Page() {
           animate="visible"
           variants={fadeInVariant(0.3)}
         >
-          <Features />
+        <CurriculumSection />
         </motion.div>
 
         <motion.div
@@ -80,6 +82,7 @@ export default function Page() {
           animate="visible"
           variants={fadeInVariant(0.6)}
         >
+          <VideoTestimonials />
           <Testimonials />
         </motion.div>
 

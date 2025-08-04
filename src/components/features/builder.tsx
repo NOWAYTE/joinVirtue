@@ -1,4 +1,5 @@
 import { AlertTriangle, Clock, HelpCircle, Frown, Lightbulb, Calendar } from 'lucide-react';
+import CtaSection from './cta-section';
 
 const BuilderStruggles = () => {
     const frustrations = [
@@ -61,11 +62,11 @@ const BuilderStruggles = () => {
                 </div>
 
                 {/* Frustrations Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     {frustrations.map((frustration, index) => (
                         <div
                             key={index}
-                            className="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow duration-300 text-center"
+                            className="rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow duration-300 text-center"
                         >
                             <div className="flex justify-center mb-6">
                                 {frustration.icon}
@@ -76,6 +77,7 @@ const BuilderStruggles = () => {
                         </div>
                     ))}
                 </div>
+                <CtaSection />
             </div>
         </div>
     );
