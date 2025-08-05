@@ -9,7 +9,12 @@ interface MenuProps {
   onSetsection: (section: string) => void;
 }
 
-const sections = [
+interface Section {
+  id: string;
+  name: string;
+}
+
+const sections: Section[] = [
   // { id: "home", name: "Home" },
   // { id: "features", name: "Features" },
   // { id: "faq", name: "FAQ" },

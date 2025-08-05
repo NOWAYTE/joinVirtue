@@ -169,7 +169,7 @@ const CurriculumSection = () => {
               30 day money back guarantee
             </div>
 
-            <h2 className="text-3xl font-bold mb-8">Join Mindly Today</h2>
+            <h2 className="text-3xl font-bold mb-8">Join Virtue Today</h2>
 
             {/* Course features grid */}
             <div className="grid grid-cols-2 gap-6 mb-8">
