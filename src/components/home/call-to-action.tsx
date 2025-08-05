@@ -1,10 +1,12 @@
-import Link from "next/link";
 import { Button } from "../ui/button";
-import { Input } from "../ui/input";
 import GradientText from "./gradient-text";
-import { ArrowUpRight, Plus } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
-const CallToAction = () => {
+interface CallToActionProps {
+  onCtaClick: () => void;
+}
+
+const CallToAction = ({ onCtaClick }: CallToActionProps) => {
     return (
         <div className="flex flex-col items-start md:items-center gap-y-5 md:gap-y-0 mt-15">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -34,12 +36,13 @@ const CallToAction = () => {
             <div className="flex flex-col sm:flex-row gap-2 w-full max-w-md pt-8">
                 <div className="max-w-4xl mx-auto">
                   <Button
-          size="lg"
-          className="bg-orange-500 text-gray-100 font-semibold px-8 py-6 text-lg rounded-lg shadow-lg hover:shadow-xl transition-all duration-200"
-        >
-          <ArrowUpRight className="w-4 h-4 mr-2" />
-          Get Instant Access - $59
-        </Button>
+                  size="lg"
+                  className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-6 text-lg rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
+                  onClick={onCtaClick}
+                >
+                  <ArrowUpRight className="w-4 h-4 mr-2" />
+                  Get Instant Access - $59
+                </Button>
 
         <p className="text-gray-400 text-xs mt-1 text-center">Limited-time offer: Price increases soon</p>
                 </div>

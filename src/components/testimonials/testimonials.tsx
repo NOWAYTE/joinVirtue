@@ -108,9 +108,9 @@ export default function AnimatedTestimonials() {
         <p className="text-sm text-muted-foreground uppercase tracking-widest">
           What Our Members Say
         </p>
-        <h2 className="text-3xl md:text-4xl font-semibold text-white">
+        <h4 className="text-3xl md:text-4xl font-semibold text-white">
           Join the Builder Movement
-        </h2>
+        </h4>
       </div>
 
       {/* Testimonials */}

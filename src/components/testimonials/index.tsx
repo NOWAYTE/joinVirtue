@@ -4,6 +4,7 @@ const Testimonials = () => {
     return (
         <section className="w-full py-20 px-6 md:px-10">
             <div className="">
+              <VideoTestimonials />
                 <AnimatedTestimonials />
             </div>
         </section>

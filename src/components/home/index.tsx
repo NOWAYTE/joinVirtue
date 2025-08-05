@@ -2,7 +2,11 @@ import CallToAction from "./call-to-action";
 import DashBoardSnippet from "./dash-board-snippet";
 import NavTestimonials from "@/components/testimonials/nav-testimonials";
 
-const Home = () => {
+interface HomeProps {
+  onCtaClick: () => void;
+}
+
+const Home = ({ onCtaClick }: HomeProps) => {
     return (
         <div className="w-full relative">
             <div className="relative z-0">
@@ -10,7 +14,7 @@ const Home = () => {
                     <div className="mb-12">
                         <NavTestimonials />
                     </div>
-                    <CallToAction />
+                    <CallToAction onCtaClick={onCtaClick} />
                     <DashBoardSnippet />
                     
                 </div>

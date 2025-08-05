@@ -134,7 +134,7 @@ const CurriculumSection = () => {
                 
                 {/* Expanded Content */}
                 {expandedModule === index && (
-                  <div className="px-6 pb-6 pt-2 border-t border-gray-100">
+                  <div className="bg-gray-100 rounded-lg px-6 pb-6 pt-2 border-t border-gray-100">
                     <p className="text-gray-700 mb-4">{module.description}</p>
                     <h4 className="font-medium text-gray-900 mb-3">Topics Covered:</h4>
                     <ul className="space-y-2 mb-4">
@@ -209,7 +209,7 @@ const CurriculumSection = () => {
               <h4 className="text-base font-semibold mb-2">🎓 Free Upcoming Webinar</h4>
               <p className="mb-3">Join our live session on <span className="font-semibold text-orange-300">August 10th</span> to get a sneak peek into the curriculum and meet the instructors.</p>
               <a
-                href="#"
+                href="/webinar"
                 className="text-orange-400 hover:underline font-medium"
               >
                 Reserve your seat →

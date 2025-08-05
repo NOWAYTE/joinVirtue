@@ -3,6 +3,7 @@
 import React from "react"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
+import { ArrowRight } from "lucide-react"
 
 const testimonials = [
   {
@@ -78,8 +79,8 @@ export default function VideoTestimonials() {
       </div>
 
       <div className="mt-16 text-center">
-        <Button className="text-white bg-white/10 hover:bg-white/20 border border-white/20 px-6 py-2 text-base font-medium rounded-xl transition">
-          Book a Call
+        <Button className="text-white bg-orange-500 hover:bg-orange-600 border border-white/20 px-6 py-2 text-base font-medium rounded-xl transition">
+          Book a Call Now <ArrowRight />
         </Button>
       </div>
       {/* <div className="absolute -bottom-32 left-1/2 transform -translate-x-1/2 w-[90%] h-[300px] bg-purple-600/10 blur-3xl rounded-full pointer-events-none" /> */}

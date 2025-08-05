@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from "@/components/navbar";
 import Home from "@/components/home";
 import Features from "@/components/features";
@@ -15,6 +15,10 @@ import { motion, Variants } from "framer-motion";
 import BuilderStruggles from "@/components/features/builder";
 import CurriculumSection from '@/components/curriculum/curr';
 import VideoTestimonials from '@/components/testimonials/video';
+import FounderSection from '@/components/founder/founderSection';
+import { QuestionnaireModal, FreeResourceSection, ExitIntentPopup } from '@/components/lead-capture';
+import { WebinarBanner } from "@/components/webinar/webinar-banner";
+
 
 const fadeInVariant = (delay = 0): Variants => ({
   hidden: { opacity: 0, y: 20 },
@@ -30,10 +34,39 @@ const fadeInVariant = (delay = 0): Variants => ({
 });
 
 export default function Page() {
+  const [isQuestionnaireOpen, setIsQuestionnaireOpen] = useState(false);
+  const [questionnaireSource, setQuestionnaireSource] = useState('');
+
+  const openQuestionnaire = (source: string) => {
+    setQuestionnaireSource(source);
+    setIsQuestionnaireOpen(true);
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
+      {/* Lead Capture Components */}
+      <QuestionnaireModal 
+        isOpen={isQuestionnaireOpen}
+        onClose={() => setIsQuestionnaireOpen(false)}
+        title={questionnaireSource === 'hero' 
+          ? "Find Out If This Is Right For You" 
+          : questionnaireSource === 'founder'
+          ? "Let's See If We're a Good Fit"
+          : "Let's Find Your Perfect Fit"}
+        description={questionnaireSource === 'hero' 
+          ? "Answer a few questions to get personalized recommendations for your online business journey."
+          : questionnaireSource === 'founder'
+          ? "I'd love to help you succeed. Let me understand your goals better."
+          : "Answer a few questions to help us personalize your experience."}
+      />
+      
+      <ExitIntentPopup />
+      
+      {/* Webinar Banner - Only on homepage */}
+      <WebinarBanner />
+      
       {/* Navbar */}
-      <header>
+      <header className="mt-10">
         <Navbar />
       </header>
 
@@ -45,7 +78,7 @@ export default function Page() {
           animate="visible"
           variants={fadeInVariant(0.1)}
         >
-          <Home />
+          <Home onCtaClick={() => openQuestionnaire('hero')} />
         </motion.div>
 
         <motion.div
@@ -82,7 +115,6 @@ export default function Page() {
           animate="visible"
           variants={fadeInVariant(0.6)}
         >
-          <VideoTestimonials />
           <Testimonials />
         </motion.div>
 
@@ -92,10 +124,20 @@ export default function Page() {
           animate="visible"
           variants={fadeInVariant(0.7)}
         >
-          <Founder />
+          <FounderSection onCtaClick={() => openQuestionnaire('founder')} />
         </motion.div>
 
-         <motion.div
+        {/* <motion.div
+          id="questionnaire"
+          initial="hidden"
+          animate="visible"
+          variants={fadeInVariant(0.75)}
+          className="pt-8"
+        >
+          <Questionnaire />
+        </motion.div> */}
+
+        <motion.div
           id="curriculum"
           initial="hidden"
           animate="visible"
@@ -110,7 +152,16 @@ export default function Page() {
           animate="visible"
           variants={fadeInVariant(0.8)}
         >
-          <PricingSection />
+          <PricingSection onCtaClick={() => openQuestionnaire('pricing')} />
+        </motion.div>
+        
+        {/* Free Resource Section */}
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeInVariant(0.9)}
+        >
+          <FreeResourceSection />
         </motion.div>
       </main>
       <footer>

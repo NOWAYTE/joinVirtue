@@ -28,7 +28,11 @@ const pricingTiers = [
   },
 ];
 
-export default function PricingSection() {
+interface PricingSectionProps {
+  onCtaClick: () => void;
+}
+
+export default function PricingSection({ onCtaClick }: PricingSectionProps) {
   return (
     <section className="w-full py-20 bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -66,7 +70,10 @@ export default function PricingSection() {
                 ))}
               </CardContent>
               <CardFooter>
-                <Button className="w-full hover:bg-primary/90">
+                <Button 
+                  className="w-full hover:bg-primary/90 transition-transform hover:scale-105"
+                  onClick={tier.name === 'Pro' ? onCtaClick : undefined}
+                >
                   {tier.name === 'Pro' ? 'Join now →' : 'Get Started →'}
                 </Button>
               </CardFooter>
