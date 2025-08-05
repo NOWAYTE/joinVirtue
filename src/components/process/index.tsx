@@ -5,40 +5,47 @@ import TracingBeam from "../ui/tracing-beam";
 
 const steps = [
   {
+    year: "2018",
+    title: "The Beginning",
+    description:
+      "Started as a solo founder with just a laptop and a vision. Working from a small home office, learning the ropes of entrepreneurship.",
+    image: "/step1.png"
+  },
+  {
+    year: "2019",
+    title: "First Big Break",
+    description:
+      "Landed first major client that validated the business model. Hired first employee and moved into a small shared office space.",
+    image: "/step2.png"
+  },
+  {
+    year: "2020",
+    title: "Pandemic Pivot",
+    description:
+      "Faced with COVID-19 challenges, shifted to remote work and adapted the business model. Discovered new opportunities in the changing market.",
+    image: "/step1.png"
+  },
+  {
+    year: "2021",
+    title: "Scaling Up",
+    description:
+      "Expanded the team to 15 people. Secured first round of funding. Moved into proper office space as remote-first company.",
+    image: "/step2.png"
+  },
+  {
+    year: "2022",
+    title: "Industry Recognition",
+    description:
+      "Featured in major industry publications. Won first business award. Reached 7-figure revenue milestone.",
+    image: "/step1.png"
+  },
+  {
     year: "2023",
-    title: "Start Small",
+    title: "Giving Back",
     description:
-      "Begin with a side project or small business idea. No need for massive upfront investment.",
-    image: "/step1.png"
-  },
-  {
-    year: "2024",
-    title: "Learn by Doing",
-    description:
-      "Get hands-on experience with real projects. Learn from mistakes and successes.",
+      "Launched mentorship program for new entrepreneurs. Started speaking at conferences to share the journey and lessons learned.",
     image: "/step2.png"
-  },
-  {
-    year: "2025",
-    title: "Build Products",
-    description:
-      "Create digital products, courses, or services that solve real problems.",
-    image: "/step1.png"
-  },
-  {
-    year: "2026",
-    title: "Build in Public",
-    description:
-      "Share your progress, get feedback, and stay accountable inside the private builder community.",
-    image: "/step2.png"
-  },
-  {
-    year: "2027",
-    title: "Earn & Scale",
-    description:
-      "Once things click, scale up what works. Get access to hidden upgrades, advanced strategies, and exclusive drops.",
-    image: "/step1.png"
-  },
+  }
 ];
 
 export default function ProcessSection() {
