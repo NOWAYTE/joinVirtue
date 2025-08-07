@@ -12,14 +12,14 @@ export function WebinarBanner() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
-      
+
       // Hide banner when scrolling down, show when scrolling up
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
         setIsScrolled(true)
       } else {
         setIsScrolled(false)
       }
-      
+
       setLastScrollY(currentScrollY)
     }
 
@@ -30,10 +30,9 @@ export function WebinarBanner() {
   if (!isVisible) return null
 
   return (
-    <div 
-      className={`fixed top-0 left-0 right-0 bg-gradient-to-r from-orange-600 to-orange-500 text-white z-50 transition-transform duration-300 ${
-        isScrolled ? '-translate-y-full' : 'translate-y-0'
-      }`}
+    <div
+      className={`fixed top-0 left-0 right-0 bg-gradient-to-r from-primary-700 to-primary-600 text-white z-50 transition-transform duration-300 ${isScrolled ? '-translate-y-full' : 'translate-y-0'
+        }`}
     >
       <div className="container mx-auto px-4 py-2 flex items-center justify-between">
         <div className="flex items-center space-x-2">
@@ -48,13 +47,13 @@ export function WebinarBanner() {
           </p>
         </div>
         <div className="flex items-center space-x-3">
-          <Link 
-            href="/webinar" 
-            className="bg-white text-orange-600 hover:bg-gray-100 px-3 py-1 text-sm font-medium rounded-md whitespace-nowrap transition-colors"
+          <Link
+            href="/webinar"
+            className="bg-white text-primary-600 hover:bg-gray-100 px-3 py-1 text-sm font-medium rounded-md whitespace-nowrap transition-colors"
           >
             Register Now
           </Link>
-          <button 
+          <button
             onClick={(e) => {
               e.preventDefault()
               e.stopPropagation()

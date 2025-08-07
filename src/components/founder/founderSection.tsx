@@ -29,7 +29,7 @@ const FounderSection = ({ onCtaClick }: FounderSectionProps) => {
                 />
               </div>
               {/* Decorative ring */}
-              <div className="absolute inset-0 rounded-full border-2 border-orange-500/30 animate-pulse"></div>
+              <div className="absolute inset-0 rounded-full border-2 border-primary-500/30 animate-pulse"></div>
             </div>
             
             <h2 className="text-3xl font-bold text-gray-900 mb-2">
@@ -45,16 +45,16 @@ const FounderSection = ({ onCtaClick }: FounderSectionProps) => {
 <div className="relative">
   {/* Quote Icon */}
   <div className="absolute -top-4 -left-4 opacity-20">
-    <Quote className="w-16 h-16 text-orange-500" />
+    <Quote className="w-16 h-16 text-primary-500" />
   </div>
 
   <blockquote className="text-2xl md:text-3xl lg:text-4xl font-light text-gray-900 leading-relaxed italic relative z-10">
-    <span className="text-orange-400">"</span>This course is designed to help you launch, optimize, and scale paid ad campaigns that actually work!<span className="text-orange-400">"</span>
+    <span className="text-primary-400">"</span>This course is designed to help you launch, optimize, and scale paid ad campaigns that actually work!<span className="text-primary-400">"</span>
   </blockquote>
 
   {/* Decorative elements */}
   <div className="absolute -bottom-4 -right-4 opacity-20">
-    <Quote className="w-16 h-16 text-orange-500 rotate-180" />
+    <Quote className="w-16 h-16 text-primary-500 rotate-180" />
   </div>
 </div>
 
@@ -62,7 +62,7 @@ const FounderSection = ({ onCtaClick }: FounderSectionProps) => {
 <div className="mt-10 flex justify-center">
   <button
     onClick={onCtaClick}
-    className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-full shadow-md transition-all duration-300 transform hover:scale-105"
+    className="inline-block bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-full shadow-md transition-all duration-300 transform hover:scale-105"
   >
     Can this course help me?
   </button>
@@ -71,23 +71,23 @@ const FounderSection = ({ onCtaClick }: FounderSectionProps) => {
 
           {/* Decorative line */}
           <div className="mt-12 flex justify-center">
-            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent rounded-full"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary-500 to-transparent rounded-full"></div>
           </div>
         </div>
       </div>
 
       {/* Floating decorative elements */}
-      <div className="absolute top-20 left-10 w-2 h-2 bg-orange-500 rounded-full animate-pulse opacity-60"></div>
-      <div className="absolute top-40 right-16 w-3 h-3 bg-orange-400 rounded-full animate-bounce opacity-40" style={{ animationDelay: '1s' }}></div>
-      <div className="absolute bottom-32 left-20 w-2 h-2 bg-orange-300 rounded-full animate-pulse opacity-50" style={{ animationDelay: '2s' }}></div>
-      <div className="absolute bottom-20 right-10 w-4 h-4 bg-orange-500 rounded-full animate-bounce opacity-30" style={{ animationDelay: '0.5s' }}></div>
+      <div className="absolute top-20 left-10 w-2 h-2 bg-primary-500 rounded-full animate-pulse opacity-60"></div>
+      <div className="absolute top-40 right-16 w-3 h-3 bg-primary-400 rounded-full animate-bounce opacity-40" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute bottom-32 left-20 w-2 h-2 bg-primary-300 rounded-full animate-pulse opacity-50" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute bottom-20 right-10 w-4 h-4 bg-primary-500 rounded-full animate-bounce opacity-30" style={{ animationDelay: '0.5s' }}></div>
 
       {/* Testimonial Card */}
       <div className="mt-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-2xl p-8 shadow-lg">
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:mr-8 mb-6 md:mb-0">
-              <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-orange-200">
+              <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-primary-200">
                 <img 
                   src="https://randomuser.me/api/portraits/women/43.jpg" 
                   alt="Sarah Johnson"
@@ -99,7 +99,7 @@ const FounderSection = ({ onCtaClick }: FounderSectionProps) => {
               <blockquote className="text-lg text-gray-700 italic mb-4">
                 "This course completely transformed how I approach paid advertising. I went from wasting money on ads to consistently getting 3x ROAS within just 2 months!"
               </blockquote>
-              <div className="text-orange-600 font-medium">Sarah Johnson</div>
+              <div className="text-primary-600 font-medium">Sarah Johnson</div>
               <div className="text-sm text-gray-500">E-commerce Store Owner</div>
               <div className="flex justify-center md:justify-start mt-2">
                 {[...Array(5)].map((_, i) => (

@@ -52,10 +52,10 @@ const TracingBeam: React.FC<TracingBeamProps> = ({ items, className }) => {
         {/* Vertical Beam */}
         <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-gray-800 z-0">
           <div
-            className="absolute top-0 left-0 w-full bg-gradient-to-b from-orange-500 via-orange-400 to-transparent transition-all duration-500 ease-out"
+            className="absolute top-0 left-0 w-full bg-gradient-to-b from-primary-500 via-primary-400 to-transparent transition-all duration-500 ease-out"
             style={{ height: `${beamHeight}%` }}
           >
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-orange-500 rounded-full shadow-lg shadow-orange-500/50 animate-pulse" />
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary-500 rounded-full shadow-lg shadow-primary-500/50 animate-pulse" />
           </div>
         </div>
 
@@ -67,20 +67,18 @@ const TracingBeam: React.FC<TracingBeamProps> = ({ items, className }) => {
             return (
               <div
                 key={index}
-                className={`relative mb-36 flex flex-col md:flex-row ${
-                  isLeft ? "md:flex-row" : "md:flex-row-reverse"
-                } items-center gap-20 md:gap-50`}
+                className={`relative mb-36 flex flex-col md:flex-row ${isLeft ? "md:flex-row" : "md:flex-row-reverse"
+                  } items-center gap-20 md:gap-50`}
               >
                 {/* Content */}
                 <div className="w-full md:w-1/2 space-y-4">
                   <div
-                    className={`transition-all duration-700 ${
-                      visible
+                    className={`transition-all duration-700 ${visible
                         ? "opacity-100 translate-y-0"
                         : "opacity-20 translate-y-10"
-                    }`}
+                      }`}
                   >
-                    <div className="text-orange-500 text-lg font-semibold tracking-wide">
+                    <div className="text-primary-500 text-lg font-semibold tracking-wide">
                       {item.year}
                     </div>
                     <h3 className="text-2xl md:text-2xl font-bold leading-tight">
@@ -90,21 +88,20 @@ const TracingBeam: React.FC<TracingBeamProps> = ({ items, className }) => {
                       {item.description}
                     </p>
                     <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-80 object-cover transform hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  </div>
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-80 object-cover transform hover:scale-105 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                    </div>
                   </div>
                 </div>
 
                 {/* Image */}
                 <div
-                  className={`w-full md:w-1/2 transition-all duration-700 ${
-                    visible ? "opacity-100 scale-100" : "opacity-0 scale-95"
-                  }`}
+                  className={`w-full md:w-1/2 transition-all duration-700 ${visible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                    }`}
                 >
                   {/* <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                     <img
@@ -119,11 +116,10 @@ const TracingBeam: React.FC<TracingBeamProps> = ({ items, className }) => {
                 {/* Dot */}
                 <div className="absolute left-1/2 transform -translate-x-1/2 z-20 top-1/2 -translate-y-1/2">
                   <div
-                    className={`w-5 h-5 rounded-full border-4 transition-all duration-500 ${
-                      visible
-                        ? "bg-orange-500 border-orange-500 shadow-lg shadow-orange-500/50 scale-125"
+                    className={`w-5 h-5 rounded-full border-4 transition-all duration-500 ${visible
+                        ? "bg-primary-500 border-primary-500 shadow-lg shadow-primary-500/50 scale-125"
                         : "bg-gray-800 border-gray-600"
-                    }`}
+                      }`}
                   />
                 </div>
               </div>
@@ -136,4 +132,3 @@ const TracingBeam: React.FC<TracingBeamProps> = ({ items, className }) => {
 };
 
 export default TracingBeam;
-

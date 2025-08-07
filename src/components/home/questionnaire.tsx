@@ -162,7 +162,7 @@ export default function Questionnaire({ isOpen, onClose, onComplete }: Questionn
                             value={option}
                             checked={formData[currentQuestion.name as keyof typeof formData] === option}
                             onChange={handleChange}
-                            className="h-5 w-5 text-orange-500 focus:ring-orange-400"
+                            className="h-5 w-5 text-primary-500 focus:ring-primary-400"
                             required
                           />
                           <span className="ml-3 text-gray-700">{option}</span>
@@ -177,7 +177,7 @@ export default function Questionnaire({ isOpen, onClose, onComplete }: Questionn
                         value={formData[currentQuestion.name as keyof typeof formData] as string}
                         onChange={handleChange}
                         placeholder={currentQuestion.placeholder}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                         required
                       />
                     </div>
@@ -197,7 +197,7 @@ export default function Questionnaire({ isOpen, onClose, onComplete }: Questionn
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="ml-auto px-6 py-3 bg-orange-500 text-white font-medium rounded-lg hover:bg-orange-600 transition-colors flex items-center"
+                    className="ml-auto px-6 py-3 bg-primary-500 text-white font-medium rounded-lg hover:bg-primary-600 transition-colors flex items-center"
                   >
                     {isSubmitting ? (
                       'Sending...'
@@ -220,7 +220,7 @@ export default function Questionnaire({ isOpen, onClose, onComplete }: Questionn
                 </p>
                 <a
                   href="#pricing"
-                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-orange-500 hover:bg-orange-600"
+                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary-500 hover:bg-primary-600"
                 >
                   View Pricing Plans
                 </a>

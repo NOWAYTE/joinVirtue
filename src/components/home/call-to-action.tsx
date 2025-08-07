@@ -37,7 +37,7 @@ const CallToAction = ({ onCtaClick }: CallToActionProps) => {
                 <div className="max-w-4xl mx-auto">
                   <Button
                   size="lg"
-                  className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-6 text-lg rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
+                  className="bg-primary-600 hover:bg-primary-700 text-white font-semibold px-8 py-6 text-lg rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
                   onClick={onCtaClick}
                 >
                   <ArrowUpRight className="w-4 h-4 mr-2" />

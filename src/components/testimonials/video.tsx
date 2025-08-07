@@ -39,7 +39,7 @@ export default function VideoTestimonials() {
         <p className="text-gray-400 text-lg mb-4">Testimonials</p>
         <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
           Our Graduates Don't Just<br />
-          Learn, <span className="text-orange-500">They Achieve.</span>
+          Learn, <span className="text-primary-500">They Achieve.</span>
         </h1>
       </div>
 
@@ -79,7 +79,7 @@ export default function VideoTestimonials() {
       </div>
 
       <div className="mt-16 text-center">
-        <Button className="text-white bg-orange-500 hover:bg-orange-600 border border-white/20 px-6 py-2 text-base font-medium rounded-xl transition">
+        <Button className="text-white bg-primary-600 hover:bg-primary-700 border border-white/20 px-6 py-2 text-base font-medium rounded-xl transition">
           Book a Call Now <ArrowRight />
         </Button>
       </div>
