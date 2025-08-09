@@ -75,13 +75,13 @@ export function QuestionnaireModal({ isOpen, onClose, title, description }: Ques
 
   const handleOptionSelect = (option: string) => {
     const question = questions[currentQuestion]
-    
+
     if (question.type === 'single') {
       setAnswers(prev => ({
         ...prev,
         [question.id]: [option]
       }))
-      
+
       // Auto-advance for single-select questions
       if (currentQuestion < questions.length - 1) {
         setTimeout(() => setCurrentQuestion(prev => prev + 1), 300)
@@ -99,7 +99,7 @@ export function QuestionnaireModal({ isOpen, onClose, title, description }: Ques
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
+
     // Simulate API call
     setTimeout(() => {
       console.log('Submitted:', { email, answers })
@@ -115,75 +115,83 @@ export function QuestionnaireModal({ isOpen, onClose, title, description }: Ques
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto">
       <div className="flex min-h-screen items-center justify-center p-4">
-        {/* Backdrop */}
-        <div 
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity"
+        {/* Backdrop with subtle blur */}
+        <div
+          className="fixed inset-0 bg-black/30 backdrop-blur-sm transition-opacity"
           onClick={onClose}
         />
-        
+
         <div className="relative w-full max-w-2xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            className="relative bg-white rounded-xl shadow-2xl overflow-hidden"
+            initial={{ opacity: 0, y: 20, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.98 }}
+            className="relative bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100"
           >
             {/* Header */}
-            <div className="p-6 border-b border-gray-100">
-              <div className="flex justify-between items-center">
-                <h2 className="text-2xl font-bold text-gray-900">
-                  {isComplete ? "Thank You!" : title || "Let's Find Your Perfect Fit"}
-                </h2>
+            <div className="bg-gradient-to-r from-gray-50 to-gray-100 p-6 border-b border-gray-200">
+              <div className="flex justify-between items-start">
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900">
+                    {isComplete ? "All Set! 🎉" : title || "Let's Get Started"}
+                  </h2>
+                  {!isComplete && (
+                    <p className="mt-2 text-gray-600 text-sm">
+                      {description || "Answer a few questions to help us personalize your experience."}
+                    </p>
+                  )}
+                </div>
                 <button
                   onClick={onClose}
-                  className="text-gray-400 hover:text-gray-500 transition-colors"
+                  className="text-gray-400 hover:text-gray-600 transition-colors p-1 -m-1 cursor-pointer"
                 >
-                  <X className="h-6 w-6" />
+                  <X className="h-5 w-5" />
                 </button>
               </div>
-              {!isComplete && (
-                <p className="mt-1 text-gray-600">
-                  {description || "Answer a few questions to help us personalize your experience."}
-                </p>
-              )}
             </div>
-            
+
             {/* Progress bar */}
             {!isComplete && (
-              <div className="h-1 bg-gray-100">
-                <div 
-                  className="h-full bg-orange-500 transition-all duration-300"
+              <div className="h-1.5 bg-blue-50">
+                <div
+                  className="h-full bg-blue-400 transition-all duration-500 ease-out"
                   style={{ width: `${progress}%` }}
                 />
               </div>
             )}
-            
+
             {/* Content */}
-            <div className="p-6">
+            <div className="p-6 md:p-8">
               <AnimatePresence mode="wait">
                 {!isComplete ? (
                   <motion.div
                     key={`question-${currentQuestion}`}
-                    initial={{ opacity: 0, x: 20 }}
+                    initial={{ opacity: 0, x: 10 }}
                     animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
+                    exit={{ opacity: 0, x: -10 }}
+                    transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                     className="space-y-6"
                   >
                     {currentQuestion < questions.length ? (
                       <>
-                        <h3 className="text-xl font-medium text-gray-900">
-                          {questions[currentQuestion].question}
-                        </h3>
+                        <div className="space-y-2">
+                          <div className="text-sm font-medium text-blue-600">
+                            Question {currentQuestion + 1} of {questions.length}
+                          </div>
+                          <h3 className="text-xl font-semibold text-gray-900">
+                            {questions[currentQuestion].question}
+                          </h3>
+                        </div>
                         <div className="space-y-3">
                           {questions[currentQuestion].options.map((option) => (
                             <button
                               key={option}
                               onClick={() => handleOptionSelect(option)}
-                              className={`w-full text-left p-4 rounded-lg border ${
+                              className={`w-full text-left p-4 rounded-xl border-2 transition-all cursor-pointer ${
                                 answers[questions[currentQuestion].id]?.includes(option)
-                                  ? 'border-orange-500 bg-orange-50 text-orange-700'
-                                  : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
-                              } transition-colors`}
+                                  ? 'border-blue-500 bg-blue-50 text-blue-700 shadow-sm'
+                                  : 'border-gray-200 hover:border-blue-300 hover:bg-blue-50'
+                              }`}
                             >
                               {option}
                             </button>
@@ -192,27 +200,43 @@ export function QuestionnaireModal({ isOpen, onClose, title, description }: Ques
                       </>
                     ) : (
                       <form onSubmit={handleSubmit} className="space-y-6">
-                        <div>
-                          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                        <div className="space-y-2">
+                          <h3 className="text-xl font-semibold text-gray-900">
+                            Almost there!
+                          </h3>
+                          <p className="text-gray-600">
                             Where should we send your personalized recommendations?
-                          </label>
+                          </p>
+                        </div>
+                        <div>
                           <input
                             type="email"
                             id="email"
                             required
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            placeholder="Enter your email"
-                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                            placeholder="your@email.com"
+                            className="w-full p-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                           />
                         </div>
                         <Button
                           type="submit"
-                          className="w-full py-3 bg-orange-500 hover:bg-orange-600 text-white font-medium"
+                          className="w-full py-4 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-medium rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 cursor-pointer"
                           disabled={isSubmitting}
                         >
-                          {isSubmitting ? 'Sending...' : 'Get My Recommendations'}
+                          {isSubmitting ? (
+                            <span className="flex items-center justify-center">
+                              <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                              </svg>
+                              Sending...
+                            </span>
+                          ) : 'Get My Free Guide →'}
                         </Button>
+                        <p className="text-xs text-gray-500 text-center">
+                          We respect your privacy. Unsubscribe at any time.
+                        </p>
                       </form>
                     )}
                   </motion.div>
@@ -220,11 +244,11 @@ export function QuestionnaireModal({ isOpen, onClose, title, description }: Ques
                   <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="text-center py-8"
+                    className="text-center py-6"
                   >
-                    <div className="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-4">
+                    <div className="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-green-100 mb-5">
                       <svg
-                        className="h-8 w-8 text-green-600"
+                        className="h-10 w-10 text-green-600"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -237,13 +261,13 @@ export function QuestionnaireModal({ isOpen, onClose, title, description }: Ques
                         />
                       </svg>
                     </div>
-                    <h3 className="text-xl font-medium text-gray-900 mb-2">All Set!</h3>
-                    <p className="text-gray-600 mb-6">
-                      We're preparing your personalized recommendations. Check your email shortly!
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3">Check Your Inbox!</h3>
+                    <p className="text-gray-600 mb-6 max-w-md mx-auto">
+                      We've sent your free guide to your email. Don't forget to check your spam folder if you can't find it!
                     </p>
                     <Button
                       onClick={onClose}
-                      className="bg-orange-500 hover:bg-orange-600 text-white"
+                      className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl font-medium transition-all cursor-pointer"
                     >
                       Close
                     </Button>
@@ -251,20 +275,23 @@ export function QuestionnaireModal({ isOpen, onClose, title, description }: Ques
                 )}
               </AnimatePresence>
             </div>
-            
+
             {/* Navigation */}
             {!isComplete && currentQuestion < questions.length && (
-              <div className="px-6 py-4 border-t border-gray-100 bg-gray-50 flex justify-between">
+              <div className="px-6 py-4 border-t border-gray-100 bg-gray-50 flex justify-between items-center">
                 <Button
                   type="button"
-                  variant="outline"
+                  variant="ghost"
                   onClick={() => setCurrentQuestion(prev => Math.max(0, prev - 1))}
                   disabled={currentQuestion === 0}
+                  className="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg cursor-pointer"
                 >
-                  Back
+                  ← Back
                 </Button>
-                <div className="text-sm text-gray-500 flex items-center">
-                  {currentQuestion + 1} of {questions.length}
+                <div className="text-sm text-gray-500">
+                  <span className="font-medium text-blue-600">{currentQuestion + 1}</span>
+                  <span className="mx-1">/</span>
+                  <span>{questions.length}</span>
                 </div>
                 <Button
                   type="button"
@@ -272,12 +299,13 @@ export function QuestionnaireModal({ isOpen, onClose, title, description }: Ques
                     if (currentQuestion < questions.length - 1) {
                       setCurrentQuestion(prev => prev + 1)
                     } else {
-                      setCurrentQuestion(prev => prev + 1) // Move to email form
+                      setCurrentQuestion(prev => prev + 1)
                     }
                   }}
                   disabled={!answers[questions[currentQuestion].id]?.length}
+                  className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
                 >
-                  {currentQuestion < questions.length - 1 ? 'Next' : 'Continue'}
+                  {currentQuestion < questions.length - 1 ? 'Continue →' : 'Get My Guide'}
                 </Button>
               </div>
             )}

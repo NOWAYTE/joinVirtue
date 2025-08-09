@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Plus, X, BarChart3, Award, Clock, Infinity, Check, ArrowRight, Sparkles } from 'lucide-react';
+import { Button } from '../ui/button';
 
 const CurriculumSection = () => {
   const [expandedModule, setExpandedModule] = useState<number | null>(null);
@@ -98,7 +99,7 @@ const CurriculumSection = () => {
           <p className="text-themeTextWhite text-lg mb-4">Curriculum Overview</p>
           <h1 className="text-4xl md:text-5xl font-bold text-themeTextWhite leading-tight">
             Unlock the secret sauce<br />
-            behind <span className="text-primary-600">world-class products.</span>
+            behind <span className="text-blue-600">world-class products.</span>
           </h1>
         </div>
 
@@ -109,7 +110,7 @@ const CurriculumSection = () => {
             {modules.map((module, index) => (
               <div 
                 key={index}
-                className={`bg-white rounded-lg overflow-hidden shadow-sm border border-gray-200 transition-all duration-300 hover:border hover:border-primary-500 ${
+                className={`bg-white rounded-lg overflow-hidden shadow-sm border border-gray-200 transition-all duration-300 hover:border hover:border-blue-500 ${
                   expandedModule === index ? 'shadow-lg' : 'hover:shadow-md'
                 }`}
               >
@@ -126,9 +127,9 @@ const CurriculumSection = () => {
                     </p>
                   </div>
                   {expandedModule === index ? (
-                    <X className="w-6 h-6 text-primary-500 transition-colors" />
+                    <X className="w-6 h-6 text-blue-500 transition-colors" />
                   ) : (
-                    <Plus className="w-6 h-6 text-gray-400 hover:text-primary-500 transition-colors" />
+                    <Plus className="w-6 h-6 text-gray-400 hover:text-blue-500 transition-colors" />
                   )}
                 </div>
                 
@@ -145,7 +146,7 @@ const CurriculumSection = () => {
                         </li>
                       ))}
                     </ul>
-                    <button className="mt-4 text-sm font-medium text-primary-500 hover:text-primary-600 flex items-center">
+                    <button className="mt-4 text-sm font-medium text-blue-500 hover:text-blue-600 flex items-center">
                       View detailed module <ArrowRight className="w-4 h-4 ml-1" />
                     </button>
                   </div>
@@ -165,7 +166,7 @@ const CurriculumSection = () => {
             </div>
 
             {/* Money back guarantee badge */}
-            <div className="inline-block bg-primary-500 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <div className="inline-block bg-gray-900 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
               30 day money back guarantee
             </div>
 
@@ -175,7 +176,7 @@ const CurriculumSection = () => {
             <div className="grid grid-cols-2 gap-6 mb-8">
               {courseFeatures.map((feature, index) => (
                 <div key={index} className="flex items-center space-x-3">
-                  <div className="text-primary-500">
+                  <div className="text-blue-500">
                     {feature.icon}
                   </div>
                   <span className="text-sm font-medium">{feature.text}</span>
@@ -199,18 +200,18 @@ const CurriculumSection = () => {
             </div>
 
             {/* Enroll button */}
-            <button className="w-full bg-primary-500 hover:bg-primary-600 text-white font-semibold py-4 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center space-x-2 group mb-6">
+            <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center space-x-2 group mb-6">
               <span>Enroll now for $59</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-            </button>
+            </Button>
 
             {/* Webinar section */}
             <div className="bg-background bg-opacity-10 border border-white/20 rounded-lg p-4 text-sm text-white backdrop-blur-sm">
               <h4 className="text-base font-semibold mb-2">🎓 Free Upcoming Webinar</h4>
-              <p className="mb-3">Join our live session on <span className="font-semibold text-primary-300">August 10th</span> to get a sneak peek into the curriculum and meet the instructors.</p>
+              <p className="mb-3">Join our live session on <span className="font-semibold text-blue-300">August 10th</span> to get a sneak peek into the curriculum and meet the instructors.</p>
               <a
                 href="/webinar"
-                className="text-primary-400 hover:underline font-medium"
+                className="text-blue-400 hover:underline font-medium"
               >
                 Reserve your seat →
               </a>

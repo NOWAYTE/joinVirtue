@@ -75,8 +75,13 @@ const Features = () => {
 
       {/* CTA Button */}
       <div className="flex justify-center mt-12">
-        <Button variant="outline" className="bg-white text-black hover:bg-gray-200">
-          Book a Transition Call Now →
+        <Button 
+          asChild
+          className="bg-blue-500 text-white hover:bg-blue-600 hover:scale-105 transition-all duration-300 transform text-base font-bold px-8 py-6 rounded-xl shadow-lg hover:shadow-xl"
+        >
+          <a href="https://cal.com/joshnangia" target="_blank" rel="noopener noreferrer">
+            Book a Transition Call Now →
+          </a>
         </Button>
       </div>
     </section>

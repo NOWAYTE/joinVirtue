@@ -4,27 +4,27 @@ import CtaSection from './cta-section';
 const BuilderStruggles = () => {
     const frustrations = [
         {
-    icon: <AlertTriangle className="w-6 h-6 text-orange-500" />,
+    icon: <AlertTriangle className="w-6 h-6 text-gray-700" />,
     text: "You're testing tools instead of building with a proven system.",
   },
   {
-    icon: <HelpCircle className="w-6 h-6 text-orange-500" />,
+    icon: <HelpCircle className="w-6 h-6 text-gray-700" />,
     text: "You’ve got ideas—but they stay in Notion, not in motion.",
   },
   {
-    icon: <Frown className="w-6 h-6 text-orange-500" />,
+    icon: <Frown className="w-6 h-6 text-gray-700" />,
     text: "You're stuck watching others scale while you hesitate to start.",
   },
   {
-    icon: <Frown className="w-6 h-6 text-orange-500" />,
+    icon: <Frown className="w-6 h-6 text-gray-700" />,
     text: "You know AI is powerful—but aren’t sure how to apply it profitably.",
   },
   {
-    icon: <Lightbulb className="w-6 h-6 text-orange-500" />,
+    icon: <Lightbulb className="w-6 h-6 text-gray-700" />,
     text: "Your offers lack leverage because there’s no automation behind them.",
   },
   {
-    icon: <Calendar className="w-6 h-6 text-orange-500" />,
+    icon: <Calendar className="w-6 h-6 text-gray-700" />,
     text: "You’re working hard, not smart—because there's no system in place.",
   },
     ];
@@ -37,7 +37,7 @@ const BuilderStruggles = () => {
                     <p className="text-gray-500 text-lg mb-4">Is this you?</p>
                     <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
                         Does Your Experience with Feel<br />
-                        More <span className="text-orange-500">Frustrating Than Futuristic ?</span>
+                        More <span className="text-blue-500">Frustrating Than Futuristic ?</span>
                     </h1>
 
                     {/* Handwritten annotation */}

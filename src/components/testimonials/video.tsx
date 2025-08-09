@@ -39,7 +39,7 @@ export default function VideoTestimonials() {
         <p className="text-gray-400 text-lg mb-4">Testimonials</p>
         <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
           Our Graduates Don't Just<br />
-          Learn, <span className="text-primary-500">They Achieve.</span>
+          Learn, <span className="text-blue-500">They Achieve.</span>
         </h1>
       </div>
 
@@ -79,8 +79,13 @@ export default function VideoTestimonials() {
       </div>
 
       <div className="mt-16 text-center">
-        <Button className="text-white bg-primary-600 hover:bg-primary-700 border border-white/20 px-6 py-2 text-base font-medium rounded-xl transition">
-          Book a Call Now <ArrowRight />
+        <Button 
+          asChild
+          className="bg-blue-500 text-white hover:bg-blue-600 hover:scale-105 transition-all duration-300 transform text-base font-bold px-8 py-6 rounded-xl shadow-lg hover:shadow-xl"
+        >
+          <a href="https://cal.com/joshnangia" target="_blank" rel="noopener noreferrer">
+            Book a Transition Call Now →
+          </a>
         </Button>
       </div>
       {/* <div className="absolute -bottom-32 left-1/2 transform -translate-x-1/2 w-[90%] h-[300px] bg-purple-600/10 blur-3xl rounded-full pointer-events-none" /> */}

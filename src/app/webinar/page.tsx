@@ -30,7 +30,7 @@ export default function WebinarPage() {
           </div>
           
           <div className="space-y-4 max-w-md mx-auto">
-            <Button className="w-full py-6 text-base font-medium rounded-lg bg-orange-500 text-white hover:bg-gray-800 transition-colors">
+            <Button className="w-full py-6 text-base font-medium rounded-lg text-white bg-gray-800 hover:bg-gray-800 hover:scale-105 transition-colors">
               Reserve My Spot - It's Free
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
@@ -98,7 +98,7 @@ export default function WebinarPage() {
             Join us for this free masterclass and take the first step towards building your dream business.
           </p>
           <div className="space-y-4 max-w-md mx-auto">
-            <Button className="w-full py-6 text-base font-medium rounded-lg bg-orange-500 text-white hover:bg-gray-800 transition-colors">
+            <Button className="w-full py-6 text-base font-medium rounded-lg text-white bg-gray-800 transition-colors hover:scale-105">
               Reserve My Free Spot
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>

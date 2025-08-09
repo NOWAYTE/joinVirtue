@@ -31,7 +31,7 @@ export function WebinarBanner() {
 
   return (
     <div
-      className={`fixed top-0 left-0 right-0 bg-gradient-to-r from-primary-700 to-primary-600 text-white z-50 transition-transform duration-300 ${isScrolled ? '-translate-y-full' : 'translate-y-0'
+      className={`fixed top-0 left-0 right-0 bg-gradient-to-r from-blue-700 to-blue-600 text-white z-50 transition-transform duration-300 ${isScrolled ? '-translate-y-full' : 'translate-y-0'
         }`}
     >
       <div className="container mx-auto px-4 py-2 flex items-center justify-between">
@@ -49,7 +49,7 @@ export function WebinarBanner() {
         <div className="flex items-center space-x-3">
           <Link
             href="/webinar"
-            className="bg-white text-primary-600 hover:bg-gray-100 px-3 py-1 text-sm font-medium rounded-md whitespace-nowrap transition-colors"
+            className="bg-white text-blue-600 hover:bg-gray-100 px-3 py-1 text-sm font-medium rounded-md whitespace-nowrap transition-colors"
           >
             Register Now
           </Link>

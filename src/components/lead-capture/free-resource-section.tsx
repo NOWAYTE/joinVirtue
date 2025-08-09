@@ -100,7 +100,7 @@ export function FreeResourceSection({
                     </div>
                     <Button
                       type="submit"
-                      className="w-full py-3 bg-orange-500 hover:bg-orange-600 text-white font-medium flex items-center justify-center"
+                      className="w-full py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium flex items-center justify-center"
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? (

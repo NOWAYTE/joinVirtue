@@ -21,7 +21,7 @@ export default function CtaSection() {
                     <div className="flex flex-col sm:flex-row justify-center gap-6 mt-10">
                         <Button 
                             size="lg"
-                            className="bg-white text-orange-600 hover:bg-gray-100 hover:scale-105 transition-all duration-300 transform text-base font-bold px-8 py-6 rounded-xl shadow-lg hover:shadow-xl"
+                            className="bg-blue-500 text-white hover:bg-blue-500 hover:text-white hover:scale-105 transition-all duration-300 transform text-base font-bold px-8 py-6 rounded-xl shadow-lg hover:shadow-xl"
                         >
                             Book Your Transition Call Now →
                         </Button>

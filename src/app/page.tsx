@@ -146,14 +146,14 @@ export default function Page() {
           <Curriculum />
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           id="pricing"
           initial="hidden"
           animate="visible"
           variants={fadeInVariant(0.8)}
         >
           <PricingSection onCtaClick={() => openQuestionnaire('pricing')} />
-        </motion.div>
+        </motion.div> */}
         
         {/* Free Resource Section */}
         <motion.div

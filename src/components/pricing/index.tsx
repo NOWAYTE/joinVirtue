@@ -74,7 +74,7 @@ export default function PricingSection({ onCtaClick }: PricingSectionProps) {
                   className="w-full hover:bg-primary/90 transition-transform hover:scale-105"
                   onClick={tier.name === 'Pro' ? onCtaClick : undefined}
                 >
-                  {tier.name === 'Pro' ? 'Join now →' : 'Get Started →'}
+                  {tier.name === 'Pro' ? 'Get Your Free Guide' : 'Get Started →'}
                 </Button>
               </CardFooter>
             </Card>
